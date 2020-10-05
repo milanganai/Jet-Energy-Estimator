@@ -1,10 +1,11 @@
-#Achieving Improved Accuracy for Jet Energy Measurements using Machine Learning
+# Achieving Improved Accuracy for Jet Energy Measurements using Machine Learning
 
 *Description*
 This work was presented here: https://indico.cern.ch/event/649482/contributions/3007443/
 Energy measurements of jets produced by hadronization of quarks and gluons help to search for important rare physics processes beyond the Standard Model. However, the pileup interactions cause inaccuracies in the measurements of jet mass and transverse momentum. Pileup correction approaches based on simplified analytical models are inadequate. This approach is an unbiased pileup mitigation technique for jet energy measurements using TensorFlow-based deep machine learning. Like area-based pileup mitigation technique, this approach is unbiased, i.e., (a) it does not differentiate between charged and neutral particles, (b) it does not remove low energy particles, or (c) reject fake-jet before jet reconstruction. Twelve most influencing parameters having first-order and second-order effects on jet measurements were investigated and were used as inputs in learning the regression model. The training set comprises ~350K full jets (with pileup) and hard jets (without pileup), generated using PYTHIA+FastJet software. Overall, this approach performed orders-of-magnitude faster than the area-based approach, and also showed better accuracy (i.e., low mean and low dispersion) for the measurements of jet transverse momentum and mass.
 
 *Requirements*
+pythia:  8.226 website: http://home.thep.lu.se/Pythia/
 fastjet: 3.3.0 website: http://fastjet.fr
 tensorflow: 1.3.0
 python: 2.7.12
