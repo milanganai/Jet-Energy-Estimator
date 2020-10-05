@@ -1,21 +1,10 @@
-// main72.cc is a part of the PYTHIA event generator.
-// Copyright (C) 2017 Torbjorn Sjostrand.
-// PYTHIA is licenced under the GNU GPL version 2, see COPYING for details.
-// Please respect the MCnet Guidelines, see GUIDELINES for details.
-
-// This is a simple test program.
-// It compares SlowJet, FJcore and FastJet, showing that they
-// find the same jets.
+// mymain.cc:
+// To simulate particle events with their transverse momentum and energy
+// Created By: Milan Ganai
+// December 2017
 
 #include "Pythia8/Pythia.h"
 
-// The FastJet3.h header enables automatic initialisation of
-// fastjet::PseudoJet objects from Pythia8 Particle and Vec4 objects,
-// as well as advanced features such as access to (a copy of)
-// the original Pythia 8 Particle directly from the PseudoJet,
-// and fastjet selectors that make use of the Particle properties.
-// See the extensive comments in the header file for further details
-// and examples.
 #include "Pythia8Plugins/FastJet3.h"
 
 using namespace Pythia8;
@@ -63,7 +52,7 @@ double eCM = 14000. ;
 string fname;
 int seed = 10000002;
 
-int simulate(); 
+int simulate();
 
 int main() {
 
@@ -185,26 +174,3 @@ int simulate() {
   // Done.
   return 0;
 }
-
-/*
- power : tells (half) the power of the transverse-momentum dependence of the distance measure,
-option -1 : the anti-kT algorithm,
-option 0 : the Cambridge/Aachen algorithm, and
-option 1 : the kT algorithm.
-
- R : the R size parameter, which is crudely related to the radius of the jet cone in (y, phi) space around the center of the jet.
-
- pTjetMin (default = 0.0 GeV) : the minimum transverse momentum required for a cluster to become a jet. By default all clusters become jets, and therefore all analyzed particles are assigned to a jet. For comparisons with perturbative QCD, however, it is only meaningful to consider jets with a significant pT.
-
- etaMax (default = 25.) : the maximum +-pseudorapidity that the detector is assumed to cover. If you pick a value above 20 there is assumed to be full coverage (obviously only meaningful for theoretical studies).
-
- select (default = 2) : tells which particles are analyzed,
-option 1 : all final-state particles,
-option 2 : all observable final-state particles, i.e. excluding neutrinos and other particles without strong or electromagnetic interactions (the isVisible() particle method), and
-option 3 : only charged final-state particles.
-
- massSet (default = 2) : masses assumed for the particles used in the analysis
-option 0 : all massless,
-option 1 : photons are massless while all others are assigned the pi+- mass, and
-option 2 : all given their correct masses
-*/
